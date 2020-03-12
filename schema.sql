@@ -15,15 +15,15 @@ USE movies_db;
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
   movie_id INT,
-  title VARCHAR(50) NOT NULL,
-  rating INT,
+  title VARCHAR(100),
+  rating DECIMAL(4,2),
   poster_path VARCHAR(50),
-  imdb_Rating INT,
+  imdb_Rating DECIMAL(4,2),
   duration INT,
-  description VARCHAR(250),
+  description VARCHAR(1000),
   genres VARCHAR(50),
   director VARCHAR(50),
-  starring VARCHAR(50) 
+  starring VARCHAR(50)
 );
 
 -- seed some data
