@@ -14,13 +14,13 @@ USE movies_db;
 -- CREATE table(S)
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
-  movie_id INT NOT NULL,
-  title VARCHAR(50),
-  rating INT,
+  movie_id INT,
+  title VARCHAR(100),
+  rating DECIMAL(4,2),
   poster_path VARCHAR(50),
-  imdb_Rating INT,
+  imdb_Rating DECIMAL(4,2),
   duration INT,
-  description VARCHAR(500),
+  description VARCHAR(1000),
   genres VARCHAR(50),
   director VARCHAR(50),
   starring VARCHAR(50)

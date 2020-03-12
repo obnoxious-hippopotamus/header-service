@@ -1,14 +1,15 @@
 const Axios = require('axios');
 const { connection } = require('./db/index.js');
 const { API_KEY } = require('./db/config.js');
+const faker = require('faker');
 
 const getMoviesAndPopulateDB = async function () {
   let movieIds = [];
-  let moviesInfo = [];
+
 
   let page = 1;
 
-  while (page <= 5) {
+  while (page <= 6) {
 
     let discoverString = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`;
 
@@ -30,24 +31,18 @@ const getMoviesAndPopulateDB = async function () {
     Axios.get(movieString)
       .then(results => {
           let path = results.data;
-          let options = {
-              movie_id: path.id,
-              title: path.title,
-              rating: path.vote_average,
-              poster_path: path.poster_path
-          }
-          let queryString = `INSERT INTO movies (movie_id) VALUES ('${path.id}')`;
+
+          let description = path.overview;
+          let queryString = `INSERT INTO movies (movie_id, title, rating, poster_path, imdb_Rating, duration, description, genres, director, starring) VALUES ("${path.id}", "${path.title}", "${path.vote_average / 2}", "${path.poster_path}", "${path.vote_average}", "${path.runtime || '0'}", "${description || 'N/A'}", "${path.genres[0].name || 'N/A'}", "${faker.name.findName()}", "${faker.name.findName()}")`;
+
           connection.query(queryString, (err, results, fields) => {
             if (err) {
-              callback(err);
-            } else {
-              console.log(results);
+              console.log('++++++++ ERROR ++++++++', err);
             }
           });
         })
       .catch(err => console.log(err));
     });
-  await console.log('trying to get movies info: ', moviesInfo);
 };
 
 getMoviesAndPopulateDB();
