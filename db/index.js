@@ -45,6 +45,7 @@ const connection = mysql.createConnection(config);
 // };
 
 module.exports = {
+    connection
 //   getAllTransactions,
 //   getAllCategories,
 //   AddCategory

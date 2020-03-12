@@ -14,16 +14,16 @@ USE movies_db;
 -- CREATE table(S)
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
-  movie_id INT,
+  movie_id INT NOT NULL,
   title VARCHAR(50) NOT NULL,
   rating INT,
   poster_path VARCHAR(50),
   imdb_Rating INT,
   duration INT,
-  description VARCHAR(250),
+  description VARCHAR(500),
   genres VARCHAR(50),
   director VARCHAR(50),
-  starring VARCHAR(50) 
+  starring VARCHAR(50)
 );
 
 -- seed some data
