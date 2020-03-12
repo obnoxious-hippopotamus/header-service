@@ -15,7 +15,7 @@ USE movies_db;
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
   movie_id INT NOT NULL,
-  title VARCHAR(50) NOT NULL,
+  title VARCHAR(50),
   rating INT,
   poster_path VARCHAR(50),
   imdb_Rating INT,
