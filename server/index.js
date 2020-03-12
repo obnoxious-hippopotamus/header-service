@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('../db');
+const db = require('../db/index.js');
 
 const app = express();
 const PORT = 3000;
@@ -14,16 +14,18 @@ app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
 
-// app.get('/api/transactions', (req, res, next) => {
-//   console.log('Getting all transactions');
-//   db.getAllTransactions( (results) => {
-//     res.status(200).send(results);
-//   });
-// });
+app.get('/api/movie', (req, res, next) => {
+  console.log('Getting a movie');
+  db.getMovie(31, (results) => {
+    // console.log(results);
+    res.status(200).send(results);
+  });
+});
+
 
 // app.get('/api/categories', (req, res, next) => {
-//   console.log('Getting all categories');
-//   db.getAllCategories( (results) => {
+  //   console.log('Getting all categories');
+  //   db.getAllCategories( (results) => {
 //     res.status(200).send(results);
 //   });
 // });

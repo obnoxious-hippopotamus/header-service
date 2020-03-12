@@ -23,7 +23,8 @@ CREATE TABLE movies (
   description VARCHAR(1000),
   genres VARCHAR(50),
   director VARCHAR(50),
-  starring VARCHAR(50)
+  starring VARCHAR(50),
+  UNIQUE KEY (movie_id)
 );
 
 -- seed some data

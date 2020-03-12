@@ -1,24 +1,24 @@
 import React from 'react';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-        }
-    }
+    };
+  }
 
-    componentDidMount() {
-        console.log('mounted');
-    }
+  componentDidMount() {
+    console.log('mounted');
+  }
 
-    render() {
-        return (
-            <div>
-                <h1>HELLO</h1>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <h1>HELLO</h1>
+      </div>
+    );
+  }
 }
 
 export default Header;
