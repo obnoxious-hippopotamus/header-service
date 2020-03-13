@@ -4,9 +4,9 @@ import React from 'react';
 const Rating = (props) => {
   return (
     <div>
-      <h3>Stars {props.stars}</h3>
-      <h3> IMDb Rating {props.imdb}</h3>
-      <h3>Duration {props.duration} min</h3>
+      <span>Stars {props.stars}</span>
+      <span> IMDb Rating {props.imdb}</span>
+      <span>{props.duration} min</span>
     </div>
   );
 };
