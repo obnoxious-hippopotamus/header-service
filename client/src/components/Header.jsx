@@ -40,12 +40,16 @@ class Header extends React.Component {
       })
       .catch(err => console.log('ERROR', err));
   }
+  // {/* <Poster
+  //   poster={this.state.movieInfo.poster_path}
+  // /> */}
 
   render() {
-
+    console.log(this.state.movieInfo.rating);
     return (
       <div>
-        <div className="container">
+        <div className="container" >
+          <img className="poster" src={'https://image.tmdb.org/t/p/w500/' + this.state.movieInfo.poster_path} />
           <Title title={this.state.movieInfo.title} />
           <Rating
             stars={this.state.movieInfo.rating}
@@ -58,12 +62,11 @@ class Header extends React.Component {
             description={this.state.movieInfo.description}
           />
           <h2 className="logo">prime</h2><h4>Included with Prime</h4>
-          <Buttons />
+          <div>
+            <Buttons />
+          </div>
         </div>
         <div>
-          {/* <Poster
-            poster={this.state.movieInfo.poster_path}
-          /> */}
           <OtherInfo
             genres={this.state.movieInfo.genres}
             director={this.state.movieInfo.director}
