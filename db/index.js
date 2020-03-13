@@ -8,17 +8,18 @@ const config = {
 
 const connection = mysql.createConnection(config);
 
-// const getAllTransactions = function(callback) {
-//   let queryString = 'SELECT * FROM transactions';
-//   connection.query(queryString, (err, results, fields) => {
-//     if (err) {
-//       callback(err);
-//     } else {
-//       // console.log('======== DB RES', results);
-//       callback(results);
-//     }
-//   });
-// };
+const getMovie = function(id, callback) {
+  // console.log('getting DB');
+  let queryString = `SELECT * FROM movies WHERE movie_id = ${id}`;
+  connection.query(queryString, (err, results, fields) => {
+    if (err) {
+      console.log('======== ERROR ', err);
+    } else {
+      // console.log('======== DB RES', results);
+      callback(results);
+    }
+  });
+};
 
 // const getAllCategories = function(callback) {
 //   let queryString = 'SELECT * FROM categories';
@@ -45,8 +46,6 @@ const connection = mysql.createConnection(config);
 // };
 
 module.exports = {
-    connection
-//   getAllTransactions,
-//   getAllCategories,
-//   AddCategory
+  connection,
+  getMovie
 };
