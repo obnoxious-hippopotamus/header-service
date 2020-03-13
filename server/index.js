@@ -10,22 +10,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
 
 app.get('/api/movie', (req, res, next) => {
-  console.log('Getting a movie');
-  db.getMovie(31, (results) => {
-    // console.log(results);
+  // console.log('Getting a movie', req.query.id);
+  db.getMovie(req.query.id, (results) => {
     res.status(200).send(results);
   });
 });
 
 
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
+
+
 // app.get('/api/categories', (req, res, next) => {
-  //   console.log('Getting all categories');
-  //   db.getAllCategories( (results) => {
+//   console.log('Getting all categories');
+//   db.getAllCategories( (results) => {
 //     res.status(200).send(results);
 //   });
 // });

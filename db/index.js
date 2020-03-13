@@ -9,9 +9,8 @@ const config = {
 const connection = mysql.createConnection(config);
 
 const getMovie = function(id, callback) {
-  // console.log("getting db");
-  let queryString = `SELECT * FROM movies
-                      WHERE id = ${id}`;
+  // console.log('getting DB');
+  let queryString = `SELECT * FROM movies WHERE movie_id = ${id}`;
   connection.query(queryString, (err, results, fields) => {
     if (err) {
       console.log('======== ERROR ', err);
