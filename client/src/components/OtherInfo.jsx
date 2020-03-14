@@ -3,10 +3,10 @@ import React from 'React';
 
 const OtherInfo = (props) => {
   return (
-    <div>
-      <h3>Genres</h3><h4>{props.genres}</h4>
-      <h3>Director</h3><h4>{props.director}</h4>
-      <h3>Starring</h3><h4>{props.starring}</h4>
+    <div className="container noMargin">
+      <h3 className="flexRow">Genres<p>{props.genres}</p></h3>
+      <h3 className="flexRow">Director<p>{props.director}</p></h3>
+      <h3 className="flexRow">Starring<p>{props.starring}</p></h3>
     </div>
   );
 };
