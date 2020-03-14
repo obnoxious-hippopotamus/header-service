@@ -47,7 +47,7 @@ class Header extends React.Component {
   render() {
     console.log(this.state.movieInfo.rating);
     return (
-      <div>
+      <div className="top">
         <div className="container" >
           <img className="poster" src={'https://image.tmdb.org/t/p/w500/' + this.state.movieInfo.poster_path} />
           <Title title={this.state.movieInfo.title} />
@@ -61,7 +61,7 @@ class Header extends React.Component {
           <Description
             description={this.state.movieInfo.description}
           />
-          <h2 className="logo">prime</h2><h4>Included with Prime</h4>
+          <h1 className="logo">prime</h1>
           <div>
             <Buttons />
           </div>

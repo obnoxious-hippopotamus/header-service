@@ -4,8 +4,8 @@ import React from 'react';
 const Buttons = () => {
   return (
     <div>
-      <span className="watchNow">
-        <button type="button">Watch Now</button>
+      <span>
+        <button className="watchNow" type="button">Watch Now</button>
       </span>
       <span className="watchTrailer">
         <button type="button">Watch Trailer</button>
