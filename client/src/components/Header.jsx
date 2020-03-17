@@ -7,47 +7,65 @@ import Poster from './Poster.jsx';
 import OtherInfo from './OtherInfo.jsx';
 import Description from './Description.jsx';
 import Buttons from './Buttons.jsx';
+import DropList from './DropList.jsx';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieIndex: 284053,
-      movieInfo: {}
+      movieIndex: 419704,
+      movieName: 'Ad Astra',
+      movieInfo: {},
+      movieTitles: []
     };
+
     this.getMovie = this.getMovie.bind(this);
+    this.getTitles = this.getTitles.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+
   }
 
   componentDidMount() {
-    // console.log('mounted');
-    this.getMovie(this.state.movieIndex);
+    this.getMovie(this.state.movieName);
   }
 
-  getMovie(movieId) {
-
+  getMovie(movieName) {
     let options = {
       params: {
-        id: movieId
+        id: movieName
       }
     };
-
     axios.get('/api/movie', options)
       .then(results => {
-        // console.log('RESULTS on Client: ', results.data[0]);
         this.setState({
           movieInfo: results.data[0]
-        }, () => console.log(this.state));
+        }, () => this.getTitles());
       })
       .catch(err => console.log('ERROR', err));
   }
-  // {/* <Poster
-  //   poster={this.state.movieInfo.poster_path}
-  // /> */}
+
+  getTitles() {
+    axios.get('/api/titles')
+      .then(results => {
+        this.setState({
+          movieTitles: results.data
+        });
+      })
+      .catch(err => console.log('ERROR', err));
+  }
+
+  handleSelect(event) {
+    console.log(event.target.value);
+    this.getMovie(event.target.value);
+  }
 
   render() {
-    console.log(this.state.movieInfo.rating);
     return (
       <div className="top">
+        <div className="container droplist" >
+          <h2>Select Another Movie</h2>
+          <DropList onChange={this.handleSelect} titles={this.state.movieTitles} />
+        </div>
         <div className="container" >
           <img className="poster" src={'https://image.tmdb.org/t/p/w500/' + this.state.movieInfo.poster_path} />
           <Title title={this.state.movieInfo.title} />
@@ -62,7 +80,7 @@ class Header extends React.Component {
             description={this.state.movieInfo.description}
           />
           <h1 className="logo">prime</h1>
-          <div>
+          <div className="inline">
             <Buttons />
           </div>
         </div>
