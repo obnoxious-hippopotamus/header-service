@@ -22,7 +22,6 @@ class Header extends React.Component {
     this.getMovie = this.getMovie.bind(this);
     this.getTitles = this.getTitles.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-
   }
 
   componentDidMount() {
@@ -84,14 +83,12 @@ class Header extends React.Component {
             <Buttons />
           </div>
         </div>
-        <div>
-          <OtherInfo
-            genres={this.state.movieInfo.genres}
-            director={this.state.movieInfo.director}
-            starring={this.state.movieInfo.starring}
-          />
-          <p className="subtext">By ordering or viewing, you agree to our Terms. Sold by Amazon Digital Services LLC.</p>
-        </div>
+        <OtherInfo
+          genres={this.state.movieInfo.genres}
+          director={this.state.movieInfo.director}
+          starring={this.state.movieInfo.starring}
+        />
+        <p className="subtext">By ordering or viewing, you agree to our Terms. Sold by Amazon Digital Services LLC.</p>
       </div>
     );
   }
