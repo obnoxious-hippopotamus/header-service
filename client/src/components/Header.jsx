@@ -13,8 +13,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieIndex: 419704,
-      movieName: 'Ad Astra',
+      movieIndex: 284053,
+      movieName: 'Thor: Ragnarok',
       movieInfo: {},
       movieTitles: []
     };
