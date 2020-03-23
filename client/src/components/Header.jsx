@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import Title from './Title.jsx';
 import Rating from './Rating.jsx';
-import Poster from './Poster.jsx';
 import OtherInfo from './OtherInfo.jsx';
 import Description from './Description.jsx';
 import Buttons from './Buttons.jsx';

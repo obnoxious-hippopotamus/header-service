@@ -16,7 +16,3 @@ describe('OtherInfo Component', () => {
     expect(app.childAt(0).hasClass('flexRow')).toBeTruthy();
   });
 });
-
-// const wrapper = mount(<OtherInfo />); // mount/render/shallow when applicable
-// expect(wrapper.find('.foo')).toHaveClassName('foo');
-// expect(app.childAt(0).hasClass('sidebar')).toBeTruthy();
