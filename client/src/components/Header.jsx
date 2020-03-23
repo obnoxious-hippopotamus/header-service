@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import Title from './Title.jsx';
 import Rating from './Rating.jsx';
-import Poster from './Poster.jsx';
 import OtherInfo from './OtherInfo.jsx';
 import Description from './Description.jsx';
 import Buttons from './Buttons.jsx';
@@ -13,8 +12,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieIndex: 419704,
-      movieName: 'Ad Astra',
+      movieIndex: 284053,
+      movieName: 'Thor: Ragnarok',
       movieInfo: {},
       movieTitles: []
     };
