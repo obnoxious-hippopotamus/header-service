@@ -18,13 +18,14 @@ app.get('/api/header/movie', (req, res, next) => {
   });
 });
 
+
 app.get('/api/header/titles', (req, res, next) => {
   db.getTitles( (results) => {
     res.status(200).send(results);
   });
 });
 
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
-
