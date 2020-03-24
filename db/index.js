@@ -10,7 +10,7 @@ const connection = mysql.createConnection(config);
 
 const getMovie = function(id, callback) {
   // console.log('getting DB');
-  let queryString = `SELECT * FROM movies WHERE title = '${id}'`;
+  let queryString = `SELECT * FROM movies WHERE movie_id = ${id}`;
   connection.query(queryString, (err, results, fields) => {
     if (err) {
       console.log('======== ERROR ', err);
@@ -34,6 +34,5 @@ const getTitles = function(callback) {
 
 module.exports = {
   connection,
-  getMovie,
-  getTitles
+  getMovie
 };

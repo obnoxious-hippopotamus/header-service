@@ -7,23 +7,12 @@
     "test-seed": "node seed.js",
     "build-dev": "webpack -d --watch",
     "start": "node server/index.js",
-    "start-dev": "nodemon ./server/index.js -w server -w db",
-    "test": "jest --watchAll --verbose --coverage"
+    "start-dev": "nodemon ./server/index.js -w server -w db"
   },
   "author": "Jim Walter",
   "license": "MIT",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.7",
-    "@babel/preset-react": "^7.8.3",
-    "babel-jest": "^25.1.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "jest": "^25.1.0",
-    "jest-environment-enzyme": "^7.1.2",
-    "jest-enzyme": "^7.1.2",
-    "nodemon": "^1.18.10",
-    "react-test-renderer": "^16.13.1"
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
     "@babel/core": "^7.4.0",
