@@ -13,8 +13,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieIndex: 419704,
-      movieName: 'Ad Astra',
+      movieIndex: 284053,
+      movieName: 'Thor: Ragnarok',
       movieInfo: {},
       movieTitles: []
     };
@@ -29,13 +29,13 @@ class Header extends React.Component {
     this.getMovie(this.state.movieName);
   }
 
-  getMovie(movieName) {
+  getMovie(movie) {
     let options = {
       params: {
-        id: movieName
+        id: movie
       }
     };
-    axios.get('/api/movie', options)
+    axios.get('/api/header/movie', options)
       .then(results => {
         this.setState({
           movieInfo: results.data[0]
@@ -45,7 +45,7 @@ class Header extends React.Component {
   }
 
   getTitles() {
-    axios.get('/api/titles')
+    axios.get('/api/header/titles')
       .then(results => {
         this.setState({
           movieTitles: results.data
