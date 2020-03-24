@@ -9,7 +9,7 @@ const RatingBar = (props) => {
       <Rating name="read-only"
         value={props.stars || 0}
         precision={0.01}
-        emptyIcon={<StarBorderIcon color="#ffb400" />}
+        emptyIcon={<StarBorderIcon />}
         readOnly
       />
       <span className="marginLeft"><p id="vote">({props.votes})</p></span>
