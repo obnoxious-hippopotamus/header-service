@@ -33,7 +33,7 @@ class Header extends React.Component {
         id: movieName
       }
     };
-    axios.get('/api/movie', options)
+    axios.get('/api/header/movie', options)
       .then(results => {
         this.setState({
           movieInfo: results.data[0]
@@ -43,7 +43,7 @@ class Header extends React.Component {
   }
 
   getTitles() {
-    axios.get('/api/titles')
+    axios.get('/api/header/titles')
       .then(results => {
         this.setState({
           movieTitles: results.data
