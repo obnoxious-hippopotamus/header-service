@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  header:
+    build:
+      context: .
+    depends_on:
+      - 'database'
+    ports:
+      - '3001:3001'
+
+  database:
+    build:
+      context: ./db
+    ports:
+      - '8000:8000'
