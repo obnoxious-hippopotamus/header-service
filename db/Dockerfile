@@ -4,6 +4,7 @@ FROM mysql:5.7 as builder
 # Make a folder in your image where your app's source code can live
 RUN ["sed", "-i", "s/exec \"$@\"/echo \"not running $@\"/", "/usr/local/bin/docker-entrypoint.sh"]
 
+ENV MYSQL_ROOT_PASSWORD=root
 # Tell your container where your app's source code will live
 
 # What source code do you want to copy, and where to put it?
