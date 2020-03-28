@@ -25,6 +25,7 @@
     "babel-loader": "^8.0.6",
     "bluebird": "^3.5.3",
     "body-parser": "^1.17.2",
+    "dotenv": "^8.2.0",
     "express": "^4.15.4",
     "faker": "^4.1.0",
     "jquery": "^3.2.1",

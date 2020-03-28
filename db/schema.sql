@@ -25,17 +25,8 @@ CREATE TABLE movies (
   description VARCHAR(1000),
   genres VARCHAR(50),
   director VARCHAR(50),
-  starring VARCHAR(50),
-  UNIQUE KEY (movie_id)
+  starring VARCHAR(50)
+  -- UNIQUE KEY (movie_id)
 );
 
--- seed some data
-
-
--- INSERT INTO movies (name, quantity)
--- VALUES  ('Frozen Blueberries', 2),
---         ('Frozen Mango', 32),
---         ('Frozen Spinach', 25),
---         ('Pizza', 3),
---         ('Bananas', 3)
 

@@ -1,12 +1,22 @@
 const mysql = require('mysql');
 
 const config = {
-  host: 'localhost',
-  user: 'root',
-  database: 'movies_db'
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  database: process.env.MYSQL_DATABASE,
+  password: process.env.MYSQL_ROOT_PASSWORD
 };
 
 const connection = mysql.createConnection(config);
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+  console.log('connected as id ' + connection.threadId);
+});
+
 
 const getMovie = function(id, callback) {
   // console.log('getting DB');

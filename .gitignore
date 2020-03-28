@@ -25,3 +25,5 @@ coverage
 node_modules
 client/dist/bundle.js
 db/config.js
+
+.env

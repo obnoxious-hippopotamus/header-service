@@ -16,6 +16,12 @@ RUN npm install
 # What port will the container talk to the outside world with once created?
 EXPOSE 3001
 
+ENV MYSQL_DATABASE="movies_db"
+ENV MYSQL_USER="root"
+ENV MYSQL_HOST="database"
+ENV MYSQL_ROOT_PASSWORD="root"
+
 # How do you start your app?
-RUN [ "npm", "test-seed" ]
+# RUN node seed.js
 CMD [ "npm", "start" ]
+
